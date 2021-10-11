@@ -34,20 +34,14 @@ namespace _03_ByteBank
             Console.WriteLine(contaDaGabriela.saldo);
             Console.WriteLine(contaDaGabrielaCosta.saldo);
 
-            ContaCorrente primeiraContaCorrente = new ContaCorrente();
-            primeiraContaCorrente.saldo = 200;
-            Console.WriteLine(primeiraContaCorrente.saldo);
+            if(contaDaGabriela.saldo >= 100)
+            {
+                contaDaGabriela.saldo -= 100;
+            }
 
-            primeiraContaCorrente.saldo += 100;
-            Console.WriteLine(primeiraContaCorrente.saldo);
+           
 
-            ContaCorrente segundaContaCorrente = new ContaCorrente();
-            segundaContaCorrente.saldo = 50;
-
-            Console.WriteLine("primeira conta tem " + primeiraContaCorrente.saldo);
-            Console.WriteLine("segunda conta tem " + segundaContaCorrente.saldo);
-
-            Console.ReadLine();
+            
             Console.ReadLine();
 
         }
