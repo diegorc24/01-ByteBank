@@ -8,8 +8,11 @@ namespace _07_ByteBank
 {
     public class Cliente
     {
-        private string _cpf;
         public string Nome { get; set; }
+
+        public string Profissao { get; set; }
+
+        private string _cpf;
         public string CPF
         {
             get
@@ -22,7 +25,7 @@ namespace _07_ByteBank
                 _cpf = value;
             }
         }
-        public string Profissao { get; set; }
+       
         
     }
 }
