@@ -1,4 +1,5 @@
 ﻿//using _07_ByteBank;
+using System;
 
 namespace _07_ByteBank
 {
@@ -8,31 +9,29 @@ namespace _07_ByteBank
   
         public Cliente Titular { get; set; }
 
-        public int Numero { get; set; }
+        public int Numero 
+        { get;  }
 
-        private int _agencia;
+        public static double TaxaOperacao { get; private set; }
+
         public int Agencia
-        {
-            get
-            {
-                return _agencia;
-            }
-            set
-            {
-                if(value <= 0)
-                {
-                    return;
-                }
-                _agencia = value;
-            }
-        }
+        { get; }
 
         public ContaCorrente(int agencia, int numero)
         {
+            if(agencia <= 0 || numero <= 0)
+            {
+               
+                //Queremos lançar uma exceçao
+            }
+
             Agencia = agencia;
             Numero = numero;
 
+            TaxaOperacao = 30 / TotalDeContasCriadas;
+
             TotalDeContasCriadas++;
+
         }
 
         private double _saldo = 100;
@@ -56,6 +55,7 @@ namespace _07_ByteBank
 
         public bool Sacar(double valor)
         {
+            
             if (_saldo < valor)
             {
                 return false;
